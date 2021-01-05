@@ -9,7 +9,7 @@ from P2_Category.Category import Category
 
 def getSoup(url):
     response = requests.get(url)
-    soup = BeautifulSoup(response.text)
+    soup = BeautifulSoup(response.text,features="html.parser")
     return (soup)
 
 
@@ -44,7 +44,7 @@ class Scrapper:
                     url = "https://books.toscrape.com/catalogue/category/books/" + category.name + "/page-" + str(i) + ".html"
                     response = requests.get(url)
                     if response.ok:
-                        soup = BeautifulSoup(response.text)
+                        soup = BeautifulSoup(response.text,features="html.parser")
                         books = soup.find("div", {"class": "col-sm-8 col-md-9"}).find_all("h3")
                         for h3 in books:
                             a = h3.find("a")
@@ -55,7 +55,7 @@ class Scrapper:
     def createBook(self, link_book):
         book_url = link_book.strip()
         book_response = requests.get(book_url)
-        book_soup = BeautifulSoup(book_response.text)
+        book_soup = BeautifulSoup(book_response.text,features="html.parser")
         book_colonne = book_soup.find("table", {"class": "table table-striped"}).find_all("td")
         book_universal_product_code = book_colonne[0]
         book_title = book_soup.find("h1")
