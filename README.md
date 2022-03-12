@@ -6,7 +6,7 @@
 
 ## Créer et activer l'environnement virtuel
 
-``PS C:\Users\oliwi\OpenClassroom\P2_Rutkowska_Oliwia> python -m venv MonEnv``  
-``PS C:\Users\oliwi\OpenClassroom\P2_Rutkowska_Oliwia> MonEnv/Scripts/activate``  
-``PS C:\Users\oliwi\OpenClassroom\P2_Rutkowska_Oliwia> pip install -r requirements.txt``  
-``PS C:\Users\oliwi\OpenClassroom\P2_Rutkowska_Oliwia> python main.py``  
+``python -m venv MonEnv``  
+`` MonEnv/Scripts/activate``  
+``pip install -r requirements.txt``  
+``python main.py``  
